@@ -30,6 +30,12 @@ export default class App extends Component<Props, State> {
     };
   }
 
+  componentDidMount = () => {
+    document.addEventListener('touchstart', e => {
+      e.preventDefault();
+    });
+  };
+
   onClickHandler = () => {
     this.setState(prev => ({ 33: prev[33] + 33, 4: prev[4] + 4 }));
     sound.play();
